@@ -12,9 +12,11 @@ You will find two sets of tests:
 To execute the project:
 - download the repo: git clone https://github.com/erickarley/getcloudapp.git
 - install the project and its packages: npm install
-- run the first or the second set of tests:
--- First: npx wdio run wdio.conf.ts --spec .\src\features\GetCloudAppTechTask.feature
--- Second: npx wdio run wdio.conf.ts --spec .\src\features\GetCloudAppTechTaskImproved.feature
+- Run the following commands to execute the two types of tests designed:
+- Basic approach: npx wdio run wdio.conf.ts --spec .\src\features\GetCloudAppTechTask.feature
+- Evolved approach with customized steps: npx wdio run wdio.conf.ts --spec .\src\features\GetCloudAppTechTaskImproved.feature
+
+This project could be also designed following a Page Object Model approach, the structure will require some classes and getters but I decided to leave it out of scope and show this 2 options.
 
 Let me know if you have any questions!
 
