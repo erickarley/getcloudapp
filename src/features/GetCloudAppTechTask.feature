@@ -83,7 +83,7 @@ Feature: Technical task assignment for Erick Arley
         And   I add "Hello Internet" to the inputfield "#user_name"
         And   I clear the inputfield "#user_company"
         And   I add "Testing" to the inputfield "#user_company"
-        When  I select the 1st option for element "#user_profile"
+        When  I select the option with the value "engineering" for element "#user_profile"
         And   I click on the button "[name='commit']"
         And   I pause for 1000ms
         Then  I expect that element "//*[.='Account updated successfully']" is displayed
@@ -92,7 +92,7 @@ Feature: Technical task assignment for Erick Arley
         And   I add "Goodbye Test" to the inputfield "#user_name"
         And   I clear the inputfield "#user_company"
         And   I add "Testing" to the inputfield "#user_company"
-        When  I select the 2nd option for element "#user_profile"
+        When  I select the option with the value "sales" for element "#user_profile"
         And   I click on the button "[name='commit']"
         And   I pause for 1000ms
         Then  I expect that element "//*[.='Account updated successfully']" is displayed

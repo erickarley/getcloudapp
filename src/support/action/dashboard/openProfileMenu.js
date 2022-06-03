@@ -1,7 +1,8 @@
 import clickElement from '../clickElement';
 import waitForDisplayed from '../waitForDisplayed';
 import waitFor from '../waitFor';
-import { bigPause } from '../../constants';
+import { bigPause, mediumPause } from '../../constants';
+import pause from '../pause';
 
 /**
  * Selects an item from the user profile menu 
@@ -21,4 +22,5 @@ export default async(menuItemName) => {
     await waitForDisplayed(profileMenuOptionSelector);
     await waitFor(profileMenuOptionSelector, bigPause, null, 'enabled');
     await clickElement('click','element',profileMenuOptionSelector);
+    await pause(mediumPause);
 }

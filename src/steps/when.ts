@@ -2,26 +2,45 @@ import { When } from '@cucumber/cucumber';
 
 import clearInputField from '../support/action/clearInputField';
 import clickElement from '../support/action/clickElement';
-import closeLastOpenedWindow from '../support/action/closeLastOpenedWindow';
-import deleteCookies from '../support/action/deleteCookies';
-import dragElement from '../support/action/dragElement';
-import focusLastOpenedWindow from '../support/action/focusLastOpenedWindow';
-import handleModal from '../support/action/handleModal';
-import moveTo from '../support/action/moveTo';
 import pause from '../support/action/pause';
-import pressButton from '../support/action/pressButton';
-import scroll from '../support/action/scroll';
 import selectOption from '../support/action/selectOption';
-import selectOptionByIndex from '../support/action/selectOptionByIndex';
-import setCookie from '../support/action/setCookie';
 import setInputField from '../support/action/setInputField';
-import setPromptText from '../support/action/setPromptText';
 import openProfileMenu from '../support/action/dashboard/openProfileMenu';
+import login from '../support/action/common/login';
+import openJetMenuItem from '../support/action/common/openJetMenuItem';
+import changeAvatar from '../support/action/userprofile/changeAvatar';
+import loginRandomUser from '../support/action/common/loginRandomUser';
+import signUp from '../support/action/common/signUp';
+
+When(
+    /^I set the Avatar details with name "([^"]*)?", company "([^"]*)?", and role "([^"]*)?"$/,
+    changeAvatar  
+);
+
+When(
+    /^I sign up a random user$/,
+    signUp
+);
+
+When(
+    /^I login with the random user$/,
+    loginRandomUser
+);
 
 When(
   /^I open the profile menu item "([^"]*)?"$/, 
   openProfileMenu 
 );
+
+When(
+    /^I login with user name "([^"]*)?" and password "([^"]*)?"$/, 
+    login 
+);
+
+When(
+    /^I open the homepage menu item "([^"]*)?"$/, 
+    openJetMenuItem
+)
 
 When(
     /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
@@ -39,58 +58,8 @@ When(
 );
 
 When(
-    /^I drag element "([^"]*)?" to element "([^"]*)?"$/,
-    dragElement
-);
-
-When(
     /^I pause for (\d+)ms$/,
     pause
-);
-
-When(
-    /^I set a cookie "([^"]*)?" with the content "([^"]*)?"$/,
-    setCookie
-);
-
-When(
-    /^I delete the cookie "([^"]*)?"$/,
-    deleteCookies
-);
-
-When(
-    /^I press "([^"]*)?"$/,
-    pressButton
-);
-
-When(
-    /^I (accept|dismiss) the (alertbox|confirmbox|prompt)$/,
-    handleModal
-);
-
-When(
-    /^I enter "([^"]*)?" into the prompt$/,
-    setPromptText
-);
-
-When(
-    /^I scroll to element "([^"]*)?"$/,
-    scroll
-);
-
-When(
-    /^I close the last opened (window|tab)$/,
-    closeLastOpenedWindow
-);
-
-When(
-    /^I focus the last opened (window|tab)$/,
-    focusLastOpenedWindow
-);
-
-When(
-    /^I select the (\d+)(st|nd|rd|th) option for element "([^"]*)?"$/,
-    selectOptionByIndex
 );
 
 When(
@@ -98,7 +67,3 @@ When(
     selectOption
 );
 
-When(
-    /^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/,
-    moveTo
-);
